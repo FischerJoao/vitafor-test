@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: vitafor-backend
+    working_dir: /app
+    command: php -S 0.0.0.0:8000 -t public
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./front-vita
+    container_name: vitafor-frontend
+    working_dir: /app
+    command: npm run dev -- --host 0.0.0.0 --port 5173
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./front-vita:/app
+      - /app/node_modules
+    depends_on:
+      - backend

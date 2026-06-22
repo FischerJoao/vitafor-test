@@ -1,0 +1,96 @@
+@baseUrl = http://localhost:8000
+@json = application/json
+@savedCharacterId = 1
+
+### Health check
+GET {{baseUrl}} HTTP/1.1
+Accept: {{json}}
+
+###
+
+### Registrar usuário
+POST {{baseUrl}}/register HTTP/1.1
+Content-Type: {{json}}
+Accept: {{json}}
+
+{
+  "name": "Joao Fischer",
+  "email": "joao@exemplo.com",
+  "password": "senha123"
+}
+
+###
+
+### Login
+POST {{baseUrl}}/login HTTP/1.1
+Content-Type: {{json}}
+Accept: {{json}}
+
+{
+  "email": "joao@exemplo.com",
+  "password": "senha123"
+}
+
+###
+
+### Usuário autenticado atual
+GET {{baseUrl}}/me HTTP/1.1
+Accept: {{json}}
+
+###
+
+### Listar personagens salvos do usuário logado
+GET {{baseUrl}}/characters HTTP/1.1
+Accept: {{json}}
+
+###
+
+### Salvar personagem
+POST {{baseUrl}}/characters HTTP/1.1
+Content-Type: {{json}}
+Accept: {{json}}
+
+{
+  "name": "Rick Sanchez",
+  "species": "Human",
+  "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+  "url": "https://rickandmortyapi.com/api/character/1"
+}
+
+###
+
+### Buscar personagem salvo por id
+GET {{baseUrl}}/characters/{{savedCharacterId}} HTTP/1.1
+Accept: {{json}}
+
+###
+
+### Atualizar personagem salvo
+PUT {{baseUrl}}/characters/{{savedCharacterId}} HTTP/1.1
+Content-Type: {{json}}
+Accept: {{json}}
+
+{
+  "name": "Rick Sanchez Editado",
+  "species": "Human",
+  "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+  "url": "https://rickandmortyapi.com/api/character/1"
+}
+
+###
+
+### Excluir personagem salvo
+DELETE {{baseUrl}}/characters/{{savedCharacterId}} HTTP/1.1
+Accept: {{json}}
+
+###
+
+### Logout
+POST {{baseUrl}}/logout HTTP/1.1
+Accept: {{json}}
+
+###
+
+### Verificar sessão após logout
+GET {{baseUrl}}/me HTTP/1.1
+Accept: {{json}}

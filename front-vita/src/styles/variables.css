@@ -1,0 +1,96 @@
+:root {
+  --color-primary: #1f4f9f;
+  --color-secondary: #97ce4c;
+  --color-accent: #00b5cc;
+
+  --background: #111827;
+  --surface: #1f2937;
+
+  --page-background: #475569;
+  --page-surface: #64748b;
+
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+
+  --shadow-default: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+.bg-page-background {
+  background-color: var(--page-background) !important;
+}
+.bg-page-surface {
+  background-color: var(--page-surface) !important;
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary) !important;
+}
+
+.text-green {
+  color: var(--color-secondary) !important;
+}
+.text-blue {
+  color: var(--color-primary) !important;
+}
+
+.text-accent {
+  color: var(--color-accent) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.bg-navbar {
+  background-color: var(--surface) !important;
+}
+
+.bg-surface {
+  background-color: var(--surface) !important;
+}
+
+.nav-pills .nav-link {
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--color-secondary);
+  background-color: rgba(151, 206, 76, 0.15);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--color-secondary);
+  color: #111827;
+}
+
+.btn-outline-dark {
+  color: var(--text);
+  border-color: var(--color-secondary);
+  background-color: var(--surface);
+  transition: all 0.2s ease;
+}
+
+.btn-dark-selected {
+  color: #111827;
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.zoom-img img {
+  transition: transform 0.4s ease;
+}
+
+.zoom-img:hover img {
+  transform: scale(1.1); /* Aumenta a imagem em 10% */
+}
